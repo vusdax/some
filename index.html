@@ -1904,7 +1904,7 @@
       // --- LOGIN LOGIC ---
       function initializeApp(userChoice) {
         MY_USER_ID = userChoice;
-        FRIEND_USER_ID = MY_USER_ID === "lic" ? "abc" : "lic";
+        FRIEND_USER_ID = MY_USER_ID === "lic" ? "ms18@27" : "sm27@18";
         MY_AVATAR_URL = `https://api.dicebear.com/7.x/initials/svg?seed=${MY_USER_ID}&backgroundColor=667eea`;
         FRIEND_AVATAR_URL = `https://api.dicebear.com/7.x/initials/svg?seed=${FRIEND_USER_ID}&backgroundColor=f5576c`;
 
@@ -1919,7 +1919,7 @@
         const userId = userIdInput.value.trim().toLowerCase();
 
         // Validate user ID
-        if (userId === "lic" || userId === "abc") {
+        if (userId === "lic" || userId === "") {
           loginError.classList.remove("active");
           initializeApp(userId);
         } else {
