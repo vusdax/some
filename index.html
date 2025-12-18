@@ -1061,11 +1061,38 @@
           transform: translateX(-50%);
           top: auto;
           right: auto;
+          width: 90%;
+          max-width: 300px;
+          justify-content: center;
         }
         .media-upload-modal {
           left: 15px;
           right: 15px;
           min-width: auto;
+        }
+
+        /* Ensure all elements are visible on mobile */
+        .header-btn {
+          display: flex !important;
+        }
+        .search-btn {
+          display: flex !important;
+          font-size: 0.8em;
+        }
+        .input-action-btn {
+          display: flex !important;
+        }
+        .typing-indicator {
+          display: flex !important;
+        }
+        .voice-recording {
+          display: flex !important;
+        }
+        .upload-progress {
+          display: flex !important;
+        }
+        .deselect-overlay {
+          display: block !important;
         }
       }
 
@@ -1904,7 +1931,7 @@
       // --- LOGIN LOGIC ---
       function initializeApp(userChoice) {
         MY_USER_ID = userChoice;
-        FRIEND_USER_ID = MY_USER_ID === "lic" ? "ms18@27" : "sm27@18";
+        FRIEND_USER_ID = MY_USER_ID === "sm27@18" ? "ms18@27" : "sm27@18";
         MY_AVATAR_URL = `https://api.dicebear.com/7.x/initials/svg?seed=${MY_USER_ID}&backgroundColor=667eea`;
         FRIEND_AVATAR_URL = `https://api.dicebear.com/7.x/initials/svg?seed=${FRIEND_USER_ID}&backgroundColor=f5576c`;
 
@@ -1919,7 +1946,7 @@
         const userId = userIdInput.value.trim().toLowerCase();
 
         // Validate user ID
-        if (userId === "lic" || userId === "") {
+        if (userId === "sm27@18" || userId === "ms18@27") {
           loginError.classList.remove("active");
           initializeApp(userId);
         } else {
