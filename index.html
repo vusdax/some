@@ -294,6 +294,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        flex-shrink: 0;
       }
 
       .header-btn {
@@ -333,6 +334,8 @@
         gap: 6px;
         font-size: 0.9em;
         color: var(--text-secondary);
+        white-space: nowrap;
+        flex-shrink: 0;
       }
       .search-btn:hover {
         background: var(--accent-primary);
@@ -1078,20 +1081,37 @@
         .search-btn {
           display: flex !important;
           font-size: 0.8em;
+          padding: 6px 10px;
+          min-width: auto;
+        }
+        .search-btn span:last-child {
+          display: inline !important;
         }
         .input-action-btn {
           display: flex !important;
         }
         .typing-indicator {
+          display: none !important; /* Hidden by default, shown when active */
+        }
+        .typing-indicator.active {
           display: flex !important;
         }
         .voice-recording {
+          display: none !important; /* Hidden by default */
+        }
+        .voice-recording.active {
           display: flex !important;
         }
         .upload-progress {
+          display: none !important; /* Hidden by default */
+        }
+        .upload-progress.active {
           display: flex !important;
         }
         .deselect-overlay {
+          display: none !important; /* Hidden by default */
+        }
+        .deselect-overlay.active {
           display: block !important;
         }
       }
